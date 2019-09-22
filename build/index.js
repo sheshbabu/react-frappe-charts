@@ -5,7 +5,9 @@ export default function ReactFrappeChart(props) {
     const chart = React.useRef(null);
     React.useEffect(() => {
         chart.current = new Chart(ref.current, Object.assign({}, props));
+    }, []);
+    React.useEffect(() => {
         chart.current.update(props.data);
-    }, [props, props.data]);
+    }, [props.data]);
     return React.createElement("div", { ref: ref });
 }
