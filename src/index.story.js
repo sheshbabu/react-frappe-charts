@@ -3,7 +3,7 @@ import addDays from "date-fns/addDays";
 import isBefore from "date-fns/isBefore";
 import isEqual from "date-fns/isEqual";
 import { storiesOf } from "@storybook/react";
-import ReactFrappeCharts from "./ReactFrappeCharts";
+import ReactFrappeChart from "./index";
 
 const config = {
   colors: ["#21ba45", "#98d85b"],
@@ -15,7 +15,7 @@ const labels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 storiesOf("Line", module)
   .add("Line", () => (
     <div style={{ width: "500px" }}>
-      <ReactFrappeCharts
+      <ReactFrappeChart
         type="line"
         data={{
           labels: labels,
@@ -27,7 +27,7 @@ storiesOf("Line", module)
   ))
   .add("More Datasets", () => (
     <div style={{ width: "500px" }}>
-      <ReactFrappeCharts
+      <ReactFrappeChart
         type="line"
         data={{
           labels: labels,
@@ -44,7 +44,7 @@ storiesOf("Line", module)
 storiesOf("Bar", module)
   .add("Default", () => (
     <div style={{ width: "500px" }}>
-      <ReactFrappeCharts
+      <ReactFrappeChart
         type="bar"
         data={{
           labels: labels,
@@ -56,7 +56,7 @@ storiesOf("Bar", module)
   ))
   .add("More Datasets", () => (
     <div style={{ width: "500px" }}>
-      <ReactFrappeCharts
+      <ReactFrappeChart
         type="bar"
         data={{
           labels: labels,
@@ -72,7 +72,7 @@ storiesOf("Bar", module)
 
 storiesOf("Mixed Axis", module).add("Default", () => (
   <div style={{ width: "500px" }}>
-    <ReactFrappeCharts
+    <ReactFrappeChart
       type="axis-mixed"
       data={{
         labels: labels,
@@ -96,7 +96,7 @@ storiesOf("Mixed Axis", module).add("Default", () => (
 
 storiesOf("Pie", module).add("Default", () => (
   <div style={{ width: "500px" }}>
-    <ReactFrappeCharts
+    <ReactFrappeChart
       type="pie"
       data={{
         labels: labels,
@@ -120,7 +120,7 @@ storiesOf("Pie", module).add("Default", () => (
 
 storiesOf("Percentage", module).add("Default", () => (
   <div style={{ width: "500px" }}>
-    <ReactFrappeCharts
+    <ReactFrappeChart
       type="percentage"
       data={{
         labels: labels,
@@ -161,7 +161,7 @@ function pickRandomNumber(min, max) {
 }
 
 storiesOf("Heatmap", module).add("Default", () => (
-  <ReactFrappeCharts
+  <ReactFrappeChart
     type="heatmap"
     data={{
       dataPoints: getHeatMapData(),

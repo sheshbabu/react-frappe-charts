@@ -50,16 +50,16 @@ type Props = {
   };
   isNavigable?: boolean;
   maxSlices?: number;
-  addDataPoint: (
+  addDataPoint?: (
     label: string,
     valueFromEachDataset: Array<number>,
     index: number
   ) => void;
-  removeDataPoint: (index: number) => void;
-  update: (data: ChartData) => void;
+  removeDataPoint?: (index: number) => void;
+  update?: (data: ChartData) => void;
 };
 
-export default function ReactFrappeCharts(props: Props) {
+export default function ReactFrappeChart(props: Props) {
   const ref = React.useRef<HTMLDivElement>(null);
   const chart = React.useRef<any>(null);
 
