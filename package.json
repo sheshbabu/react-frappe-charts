@@ -14,7 +14,8 @@
   "main": "./build/index.js",
   "scripts": {
     "start": "start-storybook -p 3030 -s public",
-    "build": "tsc",
+    "clean": "rm -rf build",
+    "build": "npm run clean && tsc",
     "build:storybook": "build-storybook",
     "typecheck": "tsc --noEmit"
   },
