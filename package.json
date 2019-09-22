@@ -1,6 +1,17 @@
 {
   "name": "react-frappe-charts",
   "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "charts",
+    "react charts",
+    "line chart",
+    "bar chart",
+    "pie chart",
+    "percentage chart",
+    "heatmap chart"
+  ],
+  "main": "./build/index.js",
   "scripts": {
     "start": "start-storybook -p 3030 -s public",
     "build": "tsc",
@@ -35,6 +46,9 @@
     "react-scripts": "3.1.2",
     "typescript": "3.6.2"
   },
+  "files": [
+    "build"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },
