@@ -33,6 +33,12 @@ export default function MyChart(props) {
 }
 ```
 
+Updating the `data` prop would update the chart with new data.
+
+## Playground
+
+Use [Storybook Playground](https://react-frappe-charts.netlify.com/?path=/story/playground--default) to tweak different props and see their effect on the chart rendered
+
 ## Contributing
 
 PRs are welcome!
