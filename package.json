@@ -1,6 +1,6 @@
 {
   "name": "react-frappe-charts",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "start-storybook -p 3030 -s public",
     "build": "tsc",
