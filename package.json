@@ -2,6 +2,7 @@
   "name": "react-frappe-charts",
   "version": "1.0.1",
   "license": "MIT",
+  "repository": "https://github.com/sheshbabu/react-frappe-charts",
   "keywords": [
     "charts",
     "react charts",
