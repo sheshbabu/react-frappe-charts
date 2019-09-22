@@ -1,8 +1,8 @@
 # React Frappe Charts
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://react-frappe-charts.netlify.com)
-
 React wrapper for [Frappe Charts](https://frappe.io/charts) with TypeScript definitions and Storybook playground
+
+[![Bundlephobia](https://flat.badgen.net/bundlephobia/minzip/react-frappe-charts@1.0.1)](https://bundlephobia.com/result?p=react-frappe-charts) [![Bundlephobia](https://flat.badgen.net/bundlephobia/min/react-frappe-charts@1.0.1)](https://bundlephobia.com/result?p=react-frappe-charts)
 
 ## Installation
 
