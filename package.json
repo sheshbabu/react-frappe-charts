@@ -1,18 +1,18 @@
 {
   "name": "react-frappe-charts",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "start": "start-storybook -p 3030 -s public",
     "build": "tsc",
-    "build:storybook": "build-storybook"
+    "build:storybook": "build-storybook",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "frappe-charts": "1.2.4"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
