@@ -15,7 +15,7 @@ type ChartData = {
   labels: Array<string>;
   datasets: Array<{
     name?: string;
-    type?: ChartType;
+    chartType?: ChartType;
     values: Array<number>;
   }>;
   dataPoints?: { ["string"]: number };

@@ -5,7 +5,7 @@ declare type ChartData = {
     labels: Array<string>;
     datasets: Array<{
         name?: string;
-        type?: ChartType;
+        chartType?: ChartType;
         values: Array<number>;
     }>;
     dataPoints?: {
@@ -41,9 +41,6 @@ declare type Props = {
     };
     isNavigable?: boolean;
     maxSlices?: number;
-    addDataPoint?: (label: string, valueFromEachDataset: Array<number>, index: number) => void;
-    removeDataPoint?: (index: number) => void;
-    update?: (data: ChartData) => void;
 };
 export default function ReactFrappeChart(props: Props): JSX.Element;
 export {};
