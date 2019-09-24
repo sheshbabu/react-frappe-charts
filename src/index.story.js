@@ -4,6 +4,7 @@ import isBefore from "date-fns/isBefore";
 import isEqual from "date-fns/isEqual";
 import { storiesOf } from "@storybook/react";
 import ReactFrappeChart from "./index";
+import { action } from '@storybook/addon-actions';
 
 const config = {
   colors: ["#21ba45", "#98d85b"],
@@ -48,7 +49,7 @@ storiesOf("Line", module)
           labels: labels,
           datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }]
         }}
-        onDataSelect={(e) => window.alert(JSON.stringify(e))}
+        onDataSelect={action('Point clicked')}
         {...config}
       />
     </div>
