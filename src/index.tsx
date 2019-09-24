@@ -23,6 +23,12 @@ type ChartData = {
   end?: Date;
 };
 
+type SelectEvent = {
+  label: string;
+  values: number[];
+  index: number;
+};
+
 type Props = {
   title?: string;
   type?: ChartType;
@@ -50,14 +56,28 @@ type Props = {
   };
   isNavigable?: boolean;
   maxSlices?: number;
+  onDataSelect?: (event: SelectEvent) => void;
 };
 
 export default function ReactFrappeChart(props: Props) {
   const ref = React.useRef<HTMLDivElement>(null);
   const chart = React.useRef<any>(null);
+  const { onDataSelect } = props;
 
   React.useEffect(() => {
-    chart.current = new Chart(ref.current, { ...props });
+    chart.current = new Chart(ref.current, {
+      isNavigable: onDataSelect !== undefined,
+      ...props
+    });
+    if (onDataSelect) {
+      chart.current.parent.addEventListener(
+        "data-select",
+        (e: SelectEvent & React.SyntheticEvent) => {
+          e.preventDefault();
+          onDataSelect(e);
+        }
+      );
+    }
   }, []);
 
   React.useEffect(() => {
