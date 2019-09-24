@@ -23,8 +23,7 @@ type ChartData = {
   end?: Date;
 };
 
-// Event contains label and value of current datapoint
-interface SelectEvent {
+type SelectEvent = {
   label: string;
   values: number[];
   index: number;
