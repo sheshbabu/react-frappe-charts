@@ -39,6 +39,19 @@ storiesOf("Line", module)
         {...config}
       />
     </div>
+  ))
+  .add("Navigation Event", () => (
+    <div style={{ width: "500px" }}>
+      <ReactFrappeChart
+        type="line"
+        data={{
+          labels: labels,
+          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }]
+        }}
+        onDataSelect={(e) => window.alert(JSON.stringify(e))}
+        {...config}
+      />
+    </div>
   ));
 
 storiesOf("Bar", module)
