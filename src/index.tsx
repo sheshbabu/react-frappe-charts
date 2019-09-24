@@ -62,21 +62,21 @@ type Props = {
 export default function ReactFrappeChart(props: Props) {
   const ref = React.useRef<HTMLDivElement>(null);
   const chart = React.useRef<any>(null);
-  const {onDataSelect} = props;
+  const { onDataSelect } = props;
 
   React.useEffect(() => {
-    chart.current = new Chart(
-      ref.current, 
-      { 
-        isNavigable: onDataSelect!==undefined, 
-        ...props 
-      }
-    );
+    chart.current = new Chart(ref.current, {
+      isNavigable: onDataSelect !== undefined,
+      ...props
+    });
     if (onDataSelect) {
-      chart.current.parent.addEventListener('data-select', (e: SelectEvent&React.SyntheticEvent) => {
-        e.preventDefault();
-        onDataSelect(e);
-      });
+      chart.current.parent.addEventListener(
+        "data-select",
+        (e: SelectEvent & React.SyntheticEvent) => {
+          e.preventDefault();
+          onDataSelect(e);
+        }
+      );
     }
   }, []);
 
