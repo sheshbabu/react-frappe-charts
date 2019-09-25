@@ -2,17 +2,22 @@
 declare type ChartType = "line" | "bar" | "axis-mixed" | "pie" | "percentage" | "heatmap";
 declare type AxisMode = "span" | "tick";
 declare type ChartData = {
-    labels: Array<string>;
-    datasets: Array<{
+    labels?: Array<string>;
+    datasets?: Array<{
         name?: string;
         chartType?: ChartType;
         values: Array<number>;
     }>;
     dataPoints?: {
-        ["string"]: number;
+        [x: string]: number;
     };
     start?: Date;
     end?: Date;
+};
+declare type SelectEvent = {
+    label: string;
+    values: number[];
+    index: number;
 };
 declare type Props = {
     title?: string;
@@ -41,6 +46,7 @@ declare type Props = {
     };
     isNavigable?: boolean;
     maxSlices?: number;
+    onDataSelect?: (event: SelectEvent) => void;
 };
 export default function ReactFrappeChart(props: Props): JSX.Element;
 export {};
