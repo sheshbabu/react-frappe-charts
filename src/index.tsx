@@ -12,13 +12,13 @@ type ChartType =
 type AxisMode = "span" | "tick";
 
 type ChartData = {
-  labels: Array<string>;
-  datasets: Array<{
+  labels?: Array<string>;
+  datasets?: Array<{
     name?: string;
     chartType?: ChartType;
     values: Array<number>;
   }>;
-  dataPoints?: { ["string"]: number };
+  dataPoints?: { [x: string]: number };
   start?: Date;
   end?: Date;
 };
