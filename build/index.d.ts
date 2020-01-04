@@ -47,7 +47,9 @@ declare type Props = {
     isNavigable?: boolean;
     maxSlices?: number;
     onDataSelect?: (event: SelectEvent) => void;
-    chartRef?: (instance: Object) => void;
+    chartRef?: {
+        current: any;
+    };
 };
 export default function ReactFrappeChart(props: Props): JSX.Element;
 export {};

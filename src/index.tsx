@@ -57,13 +57,15 @@ type Props = {
   isNavigable?: boolean;
   maxSlices?: number;
   onDataSelect?: (event: SelectEvent) => void;
-  chartRef?: (instance: Object) => void;
+  chartRef?: {
+    current: any
+  };
 };
 
 export default function ReactFrappeChart(props: Props) {
   const ref = React.useRef<HTMLDivElement>(null);
-  const chart = React.useRef<any>(null);
-  const { onDataSelect, chartRef } = props;
+  const chart = props.chartRef || React.useRef<any>(null);
+  const { onDataSelect } = props;
 
   React.useEffect(() => {
     chart.current = new Chart(ref.current, {
@@ -79,16 +81,10 @@ export default function ReactFrappeChart(props: Props) {
         }
       );
     }
-    if (chartRef) {
-      chartRef(chart)
-    }
-  }, []);
+  }, [chart]);
 
   React.useEffect(() => {
     chart.current.update(props.data);
-    if (chartRef) {
-      chartRef(chart)
-    }
   }, [props.data]);
 
   return <div ref={ref} />;
