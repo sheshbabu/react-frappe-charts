@@ -36,23 +36,23 @@ type Props = {
   height?: number;
   colors?: Array<string>;
   axisOptions?: {
-    xAxisMode: AxisMode;
-    yAxisMode: AxisMode;
-    xIsSeries: 0 | 1;
+    xAxisMode?: AxisMode;
+    yAxisMode?: AxisMode;
+    xIsSeries?: 0 | 1;
   };
   barOptions?: {
-    spaceRatio: number;
-    stacked: 0 | 1;
-    height: number;
-    depth: number;
+    spaceRatio?: number;
+    stacked?: 0 | 1;
+    height?: number;
+    depth?: number;
   };
   lineOptions?: {
-    dotSize: number;
-    hideLine: 0 | 1;
-    hideDots: 0 | 1;
-    heatline: 0 | 1;
-    regionFill: number;
-    areaFill: number;
+    dotSize?: number;
+    hideLine?: 0 | 1;
+    hideDots?: 0 | 1;
+    heatline?: 0 | 1;
+    regionFill?: number;
+    areaFill?: number;
   };
   isNavigable?: boolean;
   maxSlices?: number;
