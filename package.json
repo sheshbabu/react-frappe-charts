@@ -21,7 +21,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "frappe-charts": "1.2.4"
+    "frappe-charts": "^1.5.2"
   },
   "peerDependencies": {
     "react": ">= 16.8.0",
