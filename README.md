@@ -36,9 +36,10 @@ export default function MyChart(props) {
 Updating the `data` prop would update the chart with new data.
 
 ## Export Chart
+
 In order to export a chart we need to forward a ref to invoke the `chart.export()` feature from Frappe Charts.
 
-Example: 
+Example:
 
 ```ts
 import React, { useRef } from "react";
@@ -51,7 +52,7 @@ export default function MyChart(props) {
     if (chartRef && chartRef.current) {
       chartRef.current.export();
     }
-  }
+  };
 
   return (
     <div>
@@ -63,10 +64,12 @@ export default function MyChart(props) {
         height={250}
         data={{
           labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }]
+          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }],
         }}
       />
-      <button onClick={exportChart} type="button">Export</button>
+      <button onClick={exportChart} type="button">
+        Export
+      </button>
     </div>
   );
 }

@@ -4,12 +4,12 @@ import isBefore from "date-fns/isBefore";
 import isEqual from "date-fns/isEqual";
 import { storiesOf } from "@storybook/react";
 import ReactFrappeChart from "./index";
-import { action } from '@storybook/addon-actions';
+import { action } from "@storybook/addon-actions";
 
 const config = {
   colors: ["#21ba45", "#98d85b"],
   axisOptions: { xAxisMode: "tick", yAxisMode: "tick", xIsSeries: 1 },
-  height: 300
+  height: 300,
 };
 const labels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -20,7 +20,7 @@ storiesOf("Line", module)
         type="line"
         data={{
           labels: labels,
-          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }]
+          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }],
         }}
         {...config}
       />
@@ -34,8 +34,8 @@ storiesOf("Line", module)
           labels: labels,
           datasets: [
             { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
-            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
-          ]
+            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] },
+          ],
         }}
         {...config}
       />
@@ -47,9 +47,9 @@ storiesOf("Line", module)
         type="line"
         data={{
           labels: labels,
-          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }]
+          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }],
         }}
-        onDataSelect={action('Point clicked')}
+        onDataSelect={action("Point clicked")}
         {...config}
       />
     </div>
@@ -62,7 +62,7 @@ storiesOf("Bar", module)
         type="bar"
         data={{
           labels: labels,
-          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, -4] }]
+          datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, -4] }],
         }}
         {...config}
       />
@@ -76,8 +76,8 @@ storiesOf("Bar", module)
           labels: labels,
           datasets: [
             { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
-            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
-          ]
+            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] },
+          ],
         }}
         {...config}
       />
@@ -94,14 +94,14 @@ storiesOf("Mixed Axis", module).add("Default", () => (
           {
             name: "Dataset 1",
             values: [18, 40, 30, 35, 8, 52, 17, -4],
-            chartType: "bar"
+            chartType: "bar",
           },
           {
             name: "Dataset 2",
             values: [30, 50, -10, 15, 18, 32, 27, 14],
-            chartType: "line"
-          }
-        ]
+            chartType: "line",
+          },
+        ],
       }}
       {...config}
     />
@@ -118,14 +118,14 @@ storiesOf("Pie", module).add("Default", () => (
           {
             name: "Dataset 1",
             values: [18, 40, 30, 35, 8, 52, 17, -4],
-            chartType: "bar"
+            chartType: "bar",
           },
           {
             name: "Dataset 2",
             values: [30, 50, -10, 15, 18, 32, 27, 14],
-            chartType: "line"
-          }
-        ]
+            chartType: "line",
+          },
+        ],
       }}
       {...config}
     />
@@ -142,14 +142,14 @@ storiesOf("Percentage", module).add("Default", () => (
           {
             name: "Dataset 1",
             values: [18, 40, 30, 35, 8, 52, 17, -4],
-            chartType: "bar"
+            chartType: "bar",
           },
           {
             name: "Dataset 2",
             values: [30, 50, -10, 15, 18, 32, 27, 14],
-            chartType: "line"
-          }
-        ]
+            chartType: "line",
+          },
+        ],
       }}
       {...config}
     />
@@ -180,7 +180,7 @@ storiesOf("Heatmap", module).add("Default", () => (
     data={{
       dataPoints: getHeatMapData(),
       start: startDate,
-      end: endDate
+      end: endDate,
     }}
     {...config}
   />

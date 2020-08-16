@@ -1,13 +1,7 @@
 import React, { useImperativeHandle, forwardRef } from "react";
 import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
 
-type ChartType =
-  | "line"
-  | "bar"
-  | "axis-mixed"
-  | "pie"
-  | "percentage"
-  | "heatmap";
+type ChartType = "line" | "bar" | "axis-mixed" | "pie" | "percentage" | "heatmap";
 
 type AxisMode = "span" | "tick";
 
@@ -69,22 +63,19 @@ const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
       if (chart && chart.current) {
         chart.current.export();
       }
-    }
+    },
   }));
 
   React.useEffect(() => {
     chart.current = new Chart(ref.current, {
       isNavigable: onDataSelect !== undefined,
-      ...props
+      ...props,
     });
     if (onDataSelect) {
-      chart.current.parent.addEventListener(
-        "data-select",
-        (e: SelectEvent & React.SyntheticEvent) => {
-          e.preventDefault();
-          onDataSelect(e);
-        }
-      );
+      chart.current.parent.addEventListener("data-select", (e: SelectEvent & React.SyntheticEvent) => {
+        e.preventDefault();
+        onDataSelect(e);
+      });
     }
   }, []);
 
