@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useImperativeHandle, forwardRef } from "react";
 import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
 
 type ChartType =
@@ -59,10 +59,18 @@ type Props = {
   onDataSelect?: (event: SelectEvent) => void;
 };
 
-export default function ReactFrappeChart(props: Props) {
+const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const chart = React.useRef<any>(null);
   const { onDataSelect } = props;
+
+  useImperativeHandle(parentRef, () => ({
+    export: () => {
+      if (chart && chart.current) {
+        chart.current.export();
+      }
+    }
+  }));
 
   React.useEffect(() => {
     chart.current = new Chart(ref.current, {
@@ -85,4 +93,6 @@ export default function ReactFrappeChart(props: Props) {
   }, [props.data]);
 
   return <div ref={ref} />;
-}
+});
+
+export default ReactFrappeChart;
