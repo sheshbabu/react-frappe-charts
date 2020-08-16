@@ -9,7 +9,7 @@ React wrapper for [Frappe Charts](https://frappe.io/charts) with TypeScript defi
 **React Frappe Charts requires React 16.8.0 or later.**
 
 ```shell
-$ npm install --save react-frappe-charts
+$ npm install --save frappe-charts react-frappe-charts
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ export default function MyChart(props) {
       height={250}
       data={{
         labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }]
+        datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }],
       }}
     />
   );

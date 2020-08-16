@@ -24,12 +24,10 @@
     "version": "git add .",
     "postversion": "git push && git push --tags"
   },
-  "dependencies": {
-    "frappe-charts": "1.2.4"
-  },
   "peerDependencies": {
     "react": ">= 16.8.0",
-    "react-dom": ">= 16.8.0"
+    "react-dom": ">= 16.8.0",
+    "frappe-charts": ">= 1.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
@@ -47,6 +45,7 @@
     "date-fns": "2.2.1",
     "eslint-config-prettier": "6.1.0",
     "eslint-plugin-react-hooks": "2.0.1",
+    "frappe-charts": "1.5.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-scripts": "3.4.3",
