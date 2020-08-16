@@ -13,6 +13,7 @@
     "heatmap chart"
   ],
   "main": "./build/index.js",
+  "module": "./build/index.js",
   "scripts": {
     "start": "start-storybook -p 3030 -s public",
     "clean": "rm -rf build",
