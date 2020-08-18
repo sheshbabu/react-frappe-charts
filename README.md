@@ -37,6 +37,18 @@ export default function MyChart(props) {
 
 Updating the `data` prop would update the chart with new data.
 
+### With Next.js
+
+The underlying `frappe-charts` library should be transpiled to avoid module loading issues. Install [next-transpile-modules](https://github.com/martpie/next-transpile-modules) with your package manager and then use the following code snippet:
+
+```js
+/* next.config.js */
+const withTM = require("next-transpile-modules")(["frappe-charts"]);
+module.exports = withTM({
+  /* Optionally, specify additional settings here */
+});
+```
+
 ## Export Chart
 
 In order to export a chart we need to forward a ref to invoke the `chart.export()` feature from Frappe Charts.
