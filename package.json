@@ -68,5 +68,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@types/dompurify": "2.0.4",
+    "dompurify": "2.2.2"
   }
 }
