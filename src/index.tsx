@@ -86,8 +86,8 @@ const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
   }
 
   React.useEffect(() => {
-    chart.current.update(props.data);
-  }, [props.data]);
+    chart.current.update(data);
+  }, [data]);
 
   return <div ref={ref} />;
 });
