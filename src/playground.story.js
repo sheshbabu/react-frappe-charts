@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { storiesOf } from "@storybook/react";
-import { number, text, array, select } from "@storybook/addon-knobs";
+import { number, text, array, select, boolean } from "@storybook/addon-knobs";
 import ReactFrappeChart from "./index";
 
 storiesOf("Playground", module).add("Default", () => {
@@ -11,6 +11,10 @@ storiesOf("Playground", module).add("Default", () => {
       chartRef.current.export();
     }
   };
+
+  const formatDefault = (value) => value;
+
+  const formatAddText = (value) => `"added text" ${value}`;
 
   return (
     <div style={{ width: "500px" }}>
@@ -72,6 +76,9 @@ storiesOf("Playground", module).add("Default", () => {
             "green"
           ),
         ]}
+        animate={select("animate", [0, 1], 1)}
+        valuesOverPoints={select("valuesOverPoints", [0, 1], 0)}
+        truncateLegends={select("truncateLegends", [0, 1], 0)}
         lineOptions={{
           dotSize: number("dotSize", 4),
           hideLine: select("hideLine", [0, 1], 0),
@@ -93,6 +100,14 @@ storiesOf("Playground", module).add("Default", () => {
         }}
         maxSlices={number("maxSlices", 10)}
         height={number("Height", 300)}
+        tooltipOptions={{
+          formatTooltipX: boolean("formatTooltipX", false)
+            ? formatAddText
+            : formatDefault,
+          formatTooltipY: boolean("formatTooltipY", false)
+            ? formatAddText
+            : formatDefault,
+        }}
       />
       <button onClick={exportChart} type="button">
         Export
