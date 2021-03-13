@@ -58,10 +58,6 @@ const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const chart = React.useRef<any>(null);
   const { onDataSelect } = props;
-  const data = {
-    ...props.data,
-    labels: (props.data.labels || []).map((label: string) => DOMPurify.sanitize(label))
-  }
 
   useImperativeHandle(parentRef, () => ({
     export: () => {
