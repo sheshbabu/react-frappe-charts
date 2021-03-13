@@ -1,5 +1,6 @@
 import React, { useImperativeHandle, forwardRef } from "react";
 import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
+import DOMPurify from 'dompurify';
 
 type ChartType = "line" | "bar" | "axis-mixed" | "pie" | "percentage" | "heatmap";
 
@@ -80,7 +81,10 @@ const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
   }, []);
 
   React.useEffect(() => {
-    chart.current.update(props.data);
+    chart.current.update({
+      ...props.data,
+      labels: (props.data.labels || []).map((label: string) => DOMPurify.sanitize(label))
+    });
   }, [props.data]);
 
   return <div ref={ref} />;
