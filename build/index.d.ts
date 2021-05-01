@@ -43,6 +43,7 @@ declare type Props = {
         heatline?: 0 | 1;
         regionFill?: number;
         areaFill?: number;
+        spline?: 0 | 1;
     };
     isNavigable?: boolean;
     maxSlices?: number;
