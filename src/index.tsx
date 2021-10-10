@@ -23,7 +23,13 @@ type SelectEvent = {
   index: number;
 };
 
+type TooltipOptions = {
+  formatTooltipX?: (value: number) => any;
+  formatTooltipY?: (value: number) => any;
+};
+
 type Props = {
+  animate?: 0 | 1;
   title?: string;
   type?: ChartType;
   data: ChartData;
@@ -51,7 +57,10 @@ type Props = {
   };
   isNavigable?: boolean;
   maxSlices?: number;
+  truncateLegends?: 0 | 1;
+  tooltipOptions?: TooltipOptions;
   onDataSelect?: (event: SelectEvent) => void;
+  valuesOverPoints?: 0 | 1;
 };
 
 const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
