@@ -56,6 +56,7 @@ type Props = {
 const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const chart = React.useRef<any>(null);
+  const initialRender = React.useRef<boolean>(true);
   const { onDataSelect } = props;
 
   useImperativeHandle(parentRef, () => ({
@@ -80,6 +81,10 @@ const ReactFrappeChart = forwardRef((props: Props, parentRef) => {
   }, []);
 
   React.useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false;
+      return;
+    }
     chart.current.update(props.data);
   }, [props.data]);
 
