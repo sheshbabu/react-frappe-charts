@@ -3,6 +3,7 @@ import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
 const ReactFrappeChart = forwardRef((props, parentRef) => {
     const ref = React.useRef(null);
     const chart = React.useRef(null);
+    const initialRender = React.useRef(true);
     const { onDataSelect } = props;
     useImperativeHandle(parentRef, () => ({
         export: () => {
@@ -21,6 +22,10 @@ const ReactFrappeChart = forwardRef((props, parentRef) => {
         }
     }, []);
     React.useEffect(() => {
+        if (initialRender.current) {
+            initialRender.current = false;
+            return;
+        }
         chart.current.update(props.data);
     }, [props.data]);
     return React.createElement("div", { ref: ref });

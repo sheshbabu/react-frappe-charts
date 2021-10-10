@@ -19,7 +19,12 @@ declare type SelectEvent = {
     values: number[];
     index: number;
 };
+declare type TooltipOptions = {
+    formatTooltipX?: (value: number) => any;
+    formatTooltipY?: (value: number) => any;
+};
 declare type Props = {
+    animate?: 0 | 1;
     title?: string;
     type?: ChartType;
     data: ChartData;
@@ -47,7 +52,10 @@ declare type Props = {
     };
     isNavigable?: boolean;
     maxSlices?: number;
+    truncateLegends?: 0 | 1;
+    tooltipOptions?: TooltipOptions;
     onDataSelect?: (event: SelectEvent) => void;
+    valuesOverPoints?: 0 | 1;
 };
 declare const ReactFrappeChart: React.ForwardRefExoticComponent<Props & React.RefAttributes<unknown>>;
 export default ReactFrappeChart;
