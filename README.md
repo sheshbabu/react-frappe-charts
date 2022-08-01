@@ -43,7 +43,7 @@ The underlying `frappe-charts` library should be transpiled to avoid module load
 
 ```js
 /* next.config.js */
-const withTM = require("next-transpile-modules")(["frappe-charts"]);
+const withTM = require("next-transpile-modules")(["frappe-charts", "react-frappe-charts"]);
 module.exports = withTM({
   /* Optionally, specify additional settings here */
 });
