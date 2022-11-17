@@ -39,6 +39,7 @@ type Props = {
     xAxisMode?: AxisMode;
     yAxisMode?: AxisMode;
     xIsSeries?: 0 | 1;
+    shortenYAxisNumbers?: 0 | 1;
   };
   barOptions?: {
     spaceRatio?: number;
