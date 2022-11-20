@@ -16,6 +16,12 @@ type ChartData = {
   start?: Date;
   end?: Date;
   yMarkers?: Array<{ label: string; value: number; options?: object; }>;
+  yRegions?: Array<{
+    label: string;
+    start: number;
+    end: number;
+    options?: object;
+  }>;
 };
 
 type SelectEvent = {
