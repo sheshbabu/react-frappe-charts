@@ -15,6 +15,7 @@ type ChartData = {
   dataPoints?: { [x: string]: number };
   start?: Date;
   end?: Date;
+  yMarkers?: Array<{ label: string; value: number; options?: object; }>;
 };
 
 type SelectEvent = {
