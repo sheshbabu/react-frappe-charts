@@ -1,7 +1,7 @@
 import React, { useImperativeHandle, forwardRef } from "react";
 import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
 
-type ChartType = "line" | "bar" | "axis-mixed" | "pie" | "percentage" | "heatmap";
+type ChartType = "line" | "bar" | "axis-mixed" | "pie" | "donut" | "percentage" | "heatmap";
 
 type AxisMode = "span" | "tick";
 
